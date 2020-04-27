@@ -5,35 +5,100 @@
 }
 
 body {
-  font-size: 14px;
+  background-color: #67b8f1;
+  background-image: linear-gradient(149deg, #67b8f1 0%, #4c88b1 100%);
+  background-repeat: no-repeat;
+  color: #333;
+  font-size: 18px;
+  height: 100vh;
 }
 
-div {
+.container {
+  margin: 0 auto;
+  padding: 16px;
   width: 100%;
-  margin: 20px;
 }
 
-div li {
+.container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f7f7;
+  border-radius: 8px;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+.container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 24px;
+  width: 100%;
+}
+
+.container li + li {
+  border-top: 1px solid #eee;
+}
+
+.input-container {
   display: flex;
   align-items: center;
 }
 
-div li + li {
-  margin-top: 15px;
-}
+input[type='text'] {
+  flex: 1;
 
-button {
-  background: #7159c1;
-  color: #fff;
   border: 0;
-  padding: 10px 15px;
-  cursor: pointer;
-  margin-top: 15px;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+  padding: 16px 8px;
+  width: 100%;
+}
+.btn-add {
+  background: #2d8fff;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  font-size: 16px;
   font-weight: bold;
-  font-size: 14px;
+  padding: 16px;
+  cursor: pointer;
+  margin: 16px 0;
+
+  transition: background 0.5s;
 }
 
-div li button {
-  margin: 0 15px;
-  background: #ca4949;
+.btn-add:hover {
+  background: #457dbd;
+}
+.btn-add:disabled {
+  background: #647a94;
+  cursor: not-allowed;
+}
+
+.btn-remove {
+  background: transparent;
+  border: 0;
+  color: #ca4949;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px;
+
+  transition: color 0.5s;
+}
+
+.btn-remove:hover {
+  color: #8d6565;
+}
+
+.empty-msg {
+  padding: 16px;
 }
